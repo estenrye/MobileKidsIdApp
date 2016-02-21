@@ -1,6 +1,6 @@
 ﻿/// <reference path="../Definitions/angular.d.ts" />
 /// <reference path="../models/models.ts" />
-/// <reference path="IControllerNavigation.ts" />
+/// <reference path="../Definitions/IControllerNavigation.ts" />
 
 class LandingController implements IControllerNavigation {
     private _state;

@@ -1,4 +1,4 @@
-﻿/// <reference path="../Definitions/angular.d.ts" />
+﻿/// <reference path="../definitions/angular.d.ts" />
 /// <reference path="../models/models.ts" />
 
 class AboutController implements IControllerNavigation {

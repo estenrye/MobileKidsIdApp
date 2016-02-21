@@ -1,4 +1,4 @@
-/// <reference path="../Controllers/StaticContentCtrl.ts" />
+/// <reference path="../controllers/StaticContentCtrl.ts" />
 
 module MCM{
   export function StaticContentDir():any{

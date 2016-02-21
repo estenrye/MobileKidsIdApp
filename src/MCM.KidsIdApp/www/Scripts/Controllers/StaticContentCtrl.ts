@@ -1,4 +1,4 @@
-/// <reference path="../Definitions/angular.d.ts" />
+/// <reference path="../definitions/angular.d.ts" />
 
 module MCM {
   export class StaticContentCtrl {

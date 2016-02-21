@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /// <binding BeforeBuild='default' />
+=======
+/// <binding BeforeBuild='sass, default' />
+>>>>>>> ed87de5ca00f7ca5b60a52e9d5fe09036783d769
 "use strict";
 
 var gulp = require('gulp');

@@ -1,6 +1,6 @@
-﻿/// <reference path="../../Definitions/angular.d.ts" />
+﻿/// <reference path="../../definitions/angular.d.ts" />
 /// <reference path="../../models/models.ts" />
-/// <reference path="../../Definitions/IControllerNavigation.ts" />
+/// <reference path="../../definitions/IControllerNavigation.ts" />
 
 class ChildProfileListController implements IControllerNavigation {
     private _state;

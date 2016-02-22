@@ -24,7 +24,7 @@ module MCM{
     }
 
 
-    public get(get:Child){
+    public get(get:Child):Child{
       if(!get || !get.id){
         return null;
       }
@@ -36,9 +36,13 @@ module MCM{
       return this.findChild(id);
     }
 
-    public update(upd: Child):any{
+    public getAll(): Child[] {
+        return this._children;
+    }
+
+    public update(upd: Child):Child{
       if(!upd || !upd.id){
-        return false;
+        return null;
       }
 
       var child = this.findChild(upd.id) || upd;
@@ -54,7 +58,7 @@ module MCM{
       return child;
     }
 
-    public delete(del:Child){
+    public delete(del:Child):boolean{
       if(!del || !del.id){
         return false;
       }

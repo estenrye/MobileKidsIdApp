@@ -5,5 +5,14 @@
                 Child Profiles
             </button>
         </div>
+        <div class="list">
+            <div class="item item-icon-left item-button-right" ng-repeat="child in cplc.GetChildList()">
+                <i class="ion-android-person" />
+                <button class="button button-positive button-block icon-right">
+                    {{child.givenName}} {{child.familyName}}
+                    <i class="ion-chevron-right" />
+                </button>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

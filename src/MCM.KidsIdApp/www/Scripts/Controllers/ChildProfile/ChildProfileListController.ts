@@ -8,16 +8,40 @@ class ChildProfileListController implements IControllerNavigation {
     private _scope;
     private _childDataService: MCM.IChildDataService;
     private _navigationLinks: Array<NavigationLink>;
+    private _testDataIsLoaded: boolean;
 
     constructor($scope, $state, childDataService: MCM.IChildDataService) {
         this._state = $state;
         this._scope = $scope;
         this._childDataService = childDataService;
-        
+        this._testDataIsLoaded = false;
         //TODO: need to remove and set dynamically somewhere
+        
+        this._navigationLinks =
+            [
+            ];
+    }
+
+    public static $inject = ["$scope", "$state", 'ChildDataService']
+
+    public GetChildList(): Child[] {
+        this.Init();
+        return this._childDataService.getAll();
+    }
+
+    public NavigateToHomeScreen() {
+        this.NavigateTo('landing');
+    }
+
+    public NavigateToPreviousView() {
+        this.NavigateTo('landing');
+    }
+
+    private Init() {
         this._scope.UseTestDataInitialization = true;
 
-        if (this._scope.UseTestDataInitialization) {
+        if (this._scope.UseTestDataInitialization && ! this._testDataIsLoaded) {
+            this._testDataIsLoaded = true;
             this._childDataService.add(
                 {
                     id: 'record1',
@@ -37,23 +61,6 @@ class ChildProfileListController implements IControllerNavigation {
                     familyName: 'Oliver'
                 });
         }
-        this._navigationLinks =
-            [
-            ];
-    }
-
-    public static $inject = ["$scope", "$state", 'ChildDataService']
-
-    public GetChildList(): Child[] {
-        return this._childDataService.getAll();
-    }
-
-    public NavigateToHomeScreen() {
-        this.NavigateTo('landing');
-    }
-
-    public NavigateToPreviousView() {
-        this.NavigateTo('landing');
     }
 
     public NavigationLinks() {
